@@ -13,16 +13,13 @@ public class q5 {
         System.out.print("Enter another number: ");
         int number2 = input.nextInt();
 
-        if (operator == "+")
+        if (operator.equals("+"))
             System.out.println("Sum: " + (number1 + number2));
-        else if (operator == "-")
+        else if (operator.equals("-"))
             System.out.println("remainder: " + (number1 - number2));
-        else if (operator == "/")
+        else if (operator.equals("/"))
             System.out.println("Quotient: " + (number1 / number2));
-        else if (operator == "*")
+        else if (operator.equals("*"))
             System.out.println("Product: " + (number1 * number2));
-
-        System.out.println("Change!!!!!");
-
     }
 }
