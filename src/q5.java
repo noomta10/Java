@@ -22,7 +22,7 @@ public class q5 {
         else if (operator == "*")
             System.out.println("Product: " + (number1 * number2));
 
-
+        System.out.println("Change!!!!!");
 
     }
 }
