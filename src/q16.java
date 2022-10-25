@@ -1,7 +1,6 @@
 // 35. Write a Java program to compute the area of a polygon.
 
 import java.util.Scanner;
-
 public class q16 {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
