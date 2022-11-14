@@ -1,4 +1,4 @@
-// 79. Write a Java program to rotate an array (length 3) of integers in left direction.
+// 79. Write a Java program to rotate an array of integers in left direction.
 
 import java.util.Arrays;
 
