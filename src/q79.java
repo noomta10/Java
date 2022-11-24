@@ -2,9 +2,9 @@
 
 public class q79 {
     public static void main(String[] args) {
-        int[] array1 = {1, 2, 3};
-        int[] array2 = {1, 2, 4};
-        int result = 0;
+        int[] array1 = {1, 2, 3, 17, 6};
+        int[] array2 = {1, 2, 4, 18, 10};
+        int result;
         int count = 0;
         int index = 0;
 
