@@ -2,8 +2,21 @@
 
 public class q88 {
     public static void main(String[] args) {
-        int number = 3;
-        for ()
+        int coins = 14;
+        System.out.println(getRowCount(coins));
+    }
+
+    public static int getRowCount(int coins) {
+        if (coins < 1) return 0;
+        int rows = 0;
+        for (int i = coins; i > 0; ) {
+            if (i - rows + 1 >= 0) {
+                rows++;
+                i -= rows;
+            }
+            else i--;
+        }
+        return rows;
     }
 
 }

@@ -1,12 +1,10 @@
-import java.util.Arrays;
+import java.util.Scanner;
 
 public class try_java {
-    public static void main(String[] args) {
-        int sum = 0;
-        int number = 155;
-        while (number > 0) {
-            sum += number % 10;
-            number /= 10;
-        }
+    public static void main(String[] arg) {
+        int x = 12;
+        int y = 10;
+        int carry = x & y;
+        System.out.println(carry);
     }
 }
