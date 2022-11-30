@@ -1,8 +1,6 @@
-// 113. Write a Java program to merge two given sorted array of integers and create a new sorted ar
+// 113.a. Write a Java program to merge two given sorted array of integers and create a new sorted array list.
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 
 public class q92 {
