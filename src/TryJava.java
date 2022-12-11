@@ -1,16 +1,10 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class TryJava {
     public static void main(String[] arg) {
-        ArrayList<String> food = new ArrayList<>();
-        food.add("Pizza");
-        food.add("Chips");
+        Food food1 = new Food("pizza");
+        Food food2 = new Food("chips");
+        Food food3 = new Food("burger");
 
-        System.out.println(food.get(0));
-
-        String[] food2 = {"Pizza","Chips"};
-        String x = food2[0];
-        System.out.println(x);
+        Food[] refrigerator = {food1, food2, food3};
+        System.out.println(refrigerator[2].name);
     }
 }
