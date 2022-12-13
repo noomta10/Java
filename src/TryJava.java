@@ -4,7 +4,6 @@ public class TryJava {
         Food food2 = new Food("chips");
         Food food3 = new Food("burger");
 
-        Food[] refrigerator = {food1, food2, food3};
-        System.out.println(refrigerator[2].name);
+        food1.taste();
     }
 }
