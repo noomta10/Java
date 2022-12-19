@@ -3,7 +3,8 @@ import java.awt.*;
 
 public class Panels {
     public static void main(String[] args) {
-        ImageIcon icon = new ImageIcon(new ImageIcon("world.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+        ImageIcon icon = new ImageIcon(new ImageIcon("world.png").getImage().
+                getScaledInstance(50, 50, Image.SCALE_DEFAULT));
 
         JLabel label = new JLabel();
         label.setText("Hello world!");
