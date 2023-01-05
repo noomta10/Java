@@ -17,7 +17,7 @@ public class KeyListenerPractice extends JFrame implements KeyListener {
         icon = new ImageIcon("rocket.png");
 
         label = new JLabel();
-        label.setBounds(0,0,100,100);
+        label.setBounds(200,200,100,100);
         label.setIcon(icon);
 
         this.getContentPane().setBackground(Color.black);
