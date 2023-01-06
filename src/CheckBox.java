@@ -14,8 +14,8 @@ public class CheckBox extends JFrame implements ActionListener {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLayout(new FlowLayout());
 
-        xIcon = new ImageIcon("x.png");
-        checkIcon = new ImageIcon("check.png");
+        xIcon = new ImageIcon("pics/x.png");
+        checkIcon = new ImageIcon("pics/check.png");
 
         button = new JButton("Submit");
         button.addActionListener(this);

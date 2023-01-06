@@ -10,10 +10,10 @@ public class MouseListenerPractice extends JFrame implements MouseListener {
     ImageIcon suspiciousIcon;
 
     MouseListenerPractice(){
-        dizzyIcon = new ImageIcon("dizzy.png");
-        happyIcon = new ImageIcon("happy.png");
-        punchIcon = new ImageIcon("punch.png");
-        suspiciousIcon = new ImageIcon("suspicious.png");
+        dizzyIcon = new ImageIcon("pics/dizzy.png");
+        happyIcon = new ImageIcon("pics/happy.png");
+        punchIcon = new ImageIcon("pics/punch.png");
+        suspiciousIcon = new ImageIcon("pics/suspicious.png");
 
         label = new JLabel();
         label.setBounds(200,170,100,100);

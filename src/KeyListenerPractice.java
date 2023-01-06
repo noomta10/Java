@@ -14,7 +14,7 @@ public class KeyListenerPractice extends JFrame implements KeyListener {
         this.setLayout(null);
         this.addKeyListener(this);
 
-        icon = new ImageIcon("rocket.png");
+        icon = new ImageIcon("pics/rocket.png");
 
         label = new JLabel();
         label.setBounds(200,200,100,100);

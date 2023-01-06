@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class GUI {
     public static void main(String[] args){
-        ImageIcon image = new ImageIcon("programmer.png");
+        ImageIcon image = new ImageIcon("pics/programmer.png");
         Border border = BorderFactory.createLineBorder(new Color(152, 134, 103), 5);
 
         JLabel label = new JLabel();
