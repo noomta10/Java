@@ -7,9 +7,8 @@ public class AnimationFrame extends JFrame {
     AnimationFrame(){
         panel = new AnimationPanel();
 
-        this.add(panel);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLocationRelativeTo(null);
+        this.add(panel);
         this.pack();
         this.setVisible(true);
     }
