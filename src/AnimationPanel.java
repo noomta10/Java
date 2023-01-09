@@ -23,11 +23,10 @@ public class AnimationPanel extends JPanel implements ActionListener {
 
         background = new ImageIcon("pics/space.png").getImage();
         enemy = new ImageIcon("pics/enemy.png").getImage();
-        timer = new Timer(1, this);
+        timer = new Timer(10, this);
         timer.start();
 
     }
-
 
     public void paint(Graphics g){
         super.paint(g);
@@ -35,7 +34,6 @@ public class AnimationPanel extends JPanel implements ActionListener {
         g2D.drawImage(background, 0,0, null);
         g2D.drawImage(enemy, x,y,null);
     }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
