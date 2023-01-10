@@ -5,13 +5,15 @@ import java.io.ObjectOutputStream;
 public class Serialization {
     public static void main(String[] args) throws IOException {
         SerializationUser user = new SerializationUser();
-        user.name = "noam";
-        user.password = "Aa123456";
+        user.name = "Yarden";
+        user.password = "such0000";
 
-        FileOutputStream fileOut = new FileOutputStream("SerializedFile.ser");
+        FileOutputStream fileOut = new FileOutputStream("files/SerializedFile.ser");
         ObjectOutputStream out = new ObjectOutputStream(fileOut);
         out.writeObject(user);
         out.close();
         fileOut.close();
+
+        System.out.println("Object info saved!");
     }
 }
