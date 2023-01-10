@@ -2,7 +2,7 @@ import java.io.*;
 
 public class Deserialization {
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        SerializationUser user = null;
+        SerializationUser user;
 
         FileInputStream fileIn = new FileInputStream("files/SerializedFile.ser");
         ObjectInputStream in = new ObjectInputStream(fileIn);
