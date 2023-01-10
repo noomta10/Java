@@ -11,6 +11,7 @@ public class Deserialization {
         in.close();
 
         System.out.println(user.name);
+        System.out.println(user.password);
         user.sayHello();
 
     }
