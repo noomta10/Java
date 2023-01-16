@@ -14,10 +14,11 @@ public class Threads {
             System.out.println(i);
             Thread.sleep(1000);
         }
-
         System.out.println("Done!");
 
         ThreadsPractice myThread = new ThreadsPractice();
+        myThread.start();
+        System.out.println(Thread.activeCount());
         myThread.setDaemon(true);
         myThread.start();
         System.out.println(myThread.isDaemon());
