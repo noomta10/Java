@@ -1,44 +1,73 @@
-// Point in the first quarter
-
 public class Point {
-    final int DEFAULT_VALUE = 0;
+    private final int DEFAULT_VALUE = 0;
     private int x;
-    int y;
+    private int y;
 
-    Point(int x, int y) {
-        this.x = x;
-        this.y = y;
-
-        if (this.x < DEFAULT_VALUE)
-            this.x = 0;
-
-        if (this.y < DEFAULT_VALUE)
-            this.y = 0;
-    }
-    public void move(int deltaX, int deltaY) {
-        if (this.x + deltaX >= DEFAULT_VALUE)
-            this.x += deltaX;
-        if(this.y + deltaY >= DEFAULT_VALUE)
-            this.y += deltaY;
+    // Main constructor, check that the point is in the first quarter
+    public Point(int x, int y) {
+        this.x = (x < DEFAULT_VALUE) ? DEFAULT_VALUE : x;
+        this.y = (y < DEFAULT_VALUE) ? DEFAULT_VALUE : y;
     }
 
-    public void move(double deltaX, double deltaY) {
-        if (this.x + deltaX >= DEFAULT_VALUE)
-            this.x += deltaX;
-        if(this.y + deltaY >= DEFAULT_VALUE)
-            this.y += deltaY;
+    // Copy constructor
+    public Point(Point otherPoint) {
+        this.x = otherPoint.x;
+        this.y = otherPoint.y;
     }
 
-    public void printStatus() {
-        System.out.printf("(%d, %d)\n", this.x, this.y);
-    }
-
-    public int getX(){
+    // Returns x value
+    public int getX() {
         return this.x;
     }
 
-    public void setX(int x){
+    // Returns y value
+    public int getY() {
+        return this.y;
+    }
+
+    // Set new x, check that x is in the first quarter
+    public void setX(int x) {
         if (x >= DEFAULT_VALUE)
             this.x = x;
+    }
+
+    // Set new y, check that y is in the first quarter
+    public void setY(int y) {
+        if (y >= DEFAULT_VALUE)
+            this.y = y;
+    }
+
+    // Print the point
+    public String toString() {
+        return ("(" + this.x + ", " + this.y + ")");
+    }
+
+    // Return true if the points are equal
+    public boolean equals(Point otherPoint) {
+        return (this.x == otherPoint.x) && (this.y == otherPoint.y);
+    }
+
+    // Return true if the point is above the other point
+    public boolean isAbove(Point otherPoint) {
+        return (this.y > otherPoint.y);
+    }
+
+    // Return true if the point is right to the other point
+    public boolean isRight(Point otherPoint) {
+        return (this.x > otherPoint.x);
+    }
+
+    // Move the point, check that the new point is in the first quarter
+    public void move(int deltaX, int deltaY) {
+        if (this.x + deltaX >= DEFAULT_VALUE)
+            this.x += deltaX;
+        if (this.y + deltaY >= DEFAULT_VALUE)
+            this.y += deltaY;
+    }
+
+
+    // Calculate the distance between 2 points
+    public double distance(Point otherPoint) {
+        return Math.sqrt(Math.pow((this.x - otherPoint.x), 2) + Math.pow((this.y - otherPoint.y), 2));
     }
 }
