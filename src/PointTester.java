@@ -4,11 +4,6 @@ public class PointTester {
         Point point = new Point(0, 4);
         Point point1 = new Point(4,7);
         System.out.println(point.distance(point1));
-//        point.move(-2,1);
-//        point.printStatus();
-//
-//        System.out.println(point.getX());
-//        point.setX(13);
 
         Point point2 = new Point(1, 1);
 

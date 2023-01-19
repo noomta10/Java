@@ -15,12 +15,12 @@ public class Point {
         this.y = otherPoint.y;
     }
 
-    // Returns x value
+    // Return x value
     public int getX() {
         return this.x;
     }
 
-    // Returns y value
+    // Return y value
     public int getY() {
         return this.y;
     }
@@ -64,7 +64,6 @@ public class Point {
         if (this.y + deltaY >= DEFAULT_VALUE)
             this.y += deltaY;
     }
-
 
     // Calculate the distance between 2 points
     public double distance(Point otherPoint) {
