@@ -1,7 +1,8 @@
 public class TRY {
-    public static void main(String[] args){
-        String str1 = "hello";
-        String str2 = "hello";
-        System.out.println(str1.equals(str2));
+    public static void main(String[] args) {
+        int[] myArray = {1,2,3,4};
+        for (int i = 0; i < myArray.length; i++)
+            System.out.println(myArray[i]);
+
     }
 }

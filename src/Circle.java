@@ -2,7 +2,6 @@ public class Circle {
     private double radius;
     private Point center;
     private final int DEFAULT_RADIUS = 1;
-    private final int DEFAULT_VALUE = 0;
 
     // Main constructor- get x, y, radius
     public Circle(int x, int y, double radius) {

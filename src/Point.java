@@ -5,8 +5,8 @@ public class Point {
 
     // Main constructor, check that the point is in the first quarter
     public Point(int x, int y) {
-        this.x = (x < DEFAULT_VALUE) ? DEFAULT_VALUE : x;
-        this.y = (y < DEFAULT_VALUE) ? DEFAULT_VALUE : y;
+        this.x = Math.max(x, DEFAULT_VALUE);
+        this.y = Math.max(y, DEFAULT_VALUE);
     }
 
     // Copy constructor
