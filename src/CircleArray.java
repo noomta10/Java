@@ -26,12 +26,12 @@ public class CircleArray {
     public Circle highestCircle() {
         if (this.numberOfCircles == 0)
             return null;
-        Circle highestCircle = this.circleArray[0];
+        Circle highest = this.circleArray[0];
         for (int i = 1; i < this.numberOfCircles; i++) {
-            if (this.circleArray[i].getCenter().isAbove(highestCircle().getCenter()))
-                highestCircle = this.circleArray[i];
+            if (this.circleArray[i].getCenter().isAbove(highest.getCenter()))
+                highest = this.circleArray[i];
         }
-        return new Circle(highestCircle);
+        return new Circle(highest);
     }
 
     // Return biggest circle in the array
