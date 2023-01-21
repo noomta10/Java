@@ -38,12 +38,12 @@ public class CircleArray {
     public Circle biggestCircle() {
         if (this.numberOfCircles == 0)
             return null;
-        Circle biggestCircle = this.circleArray[0];
+        Circle biggest = this.circleArray[0];
         for (int i = 1; i < this.numberOfCircles; i++) {
-            if (this.circleArray[i].area() > biggestCircle.area())
-                biggestCircle = this.circleArray[i];
+            if (this.circleArray[i].area() > biggest.area())
+                biggest = this.circleArray[i];
         }
-        return new Circle(biggestCircle);
+        return new Circle(biggest);
     }
 
 
