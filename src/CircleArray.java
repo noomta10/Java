@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class CircleArray {
 
     // Attributes and constants
@@ -16,7 +18,7 @@ public class CircleArray {
     public boolean addCircle(Point point, Double radius) {
         if (this.numberOfCircles >= MAX_CIRCLES)
             return false;
-        this.circleArray[this.numberOfCircles] = new Circle(point, radius);
+        this.circleArray[this.numberOfCircles++] = new Circle(point, radius);
         return true;
     }
 
@@ -50,7 +52,7 @@ public class CircleArray {
             if (this.circleArray[i].equals(circleToRemove)) {
                 for (int j = i; j < this.numberOfCircles - 1; j++)
                     this.circleArray[j] = this.circleArray[j + 1];
-                this.circleArray[numberOfCircles-1] = null;
+                this.circleArray[numberOfCircles - 1] = null;
                 this.numberOfCircles--;
                 return true;
             }
@@ -58,5 +60,8 @@ public class CircleArray {
         return false;
     }
 
+    public String getCircleArray(){
+        return Arrays.toString(this.circleArray);
+    }
 }
 
