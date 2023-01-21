@@ -39,9 +39,10 @@ public class CircleArray {
         if (this.numberOfCircles == 0)
             return null;
         Circle biggestCircle = this.circleArray[0];
-        for (int i = 1; i < this.numberOfCircles; i++)
+        for (int i = 1; i < this.numberOfCircles; i++) {
             if (this.circleArray[i].area() > biggestCircle.area())
                 biggestCircle = this.circleArray[i];
+        }
         return new Circle(biggestCircle);
     }
 
@@ -60,7 +61,7 @@ public class CircleArray {
         return false;
     }
 
-    public String getCircleArray(){
+    public String getCircleArray() {
         return Arrays.toString(this.circleArray);
     }
 }
