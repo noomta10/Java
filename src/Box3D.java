@@ -14,7 +14,23 @@ public class Box3D {
         this.length = length < INITIAL_RIB_VALUE ? INITIAL_RIB_VALUE : length;
         this.width = width < INITIAL_RIB_VALUE ? INITIAL_RIB_VALUE : width;
         this.height = height < INITIAL_RIB_VALUE ? INITIAL_RIB_VALUE : height;
+    }
 
+    Box3D(Box3D otherBox){
+        this.length = otherBox.length;
+        this.width = otherBox.width;
+        this.height = otherBox.height;
+    }
 
+    public int getLength(){
+        return this.length;
+    }
+
+    public int getWidth() {
+        return this.width;
+    }
+
+    public int getHeight() {
+        return this.height;
     }
 }
