@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Mmn11b_2019 {
+public class Mmn11b_2019_Equations {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("This program solves a system of 2 linear equations");
@@ -21,7 +21,7 @@ public class Mmn11b_2019 {
             System.out.printf("Single solution: (%.1f, %.1f)", firstSolution, secondSolution);
         }
         else if (
-                (b2 * a11 - b1 * a21 != 0) &&
+                (b2 * a11 - b1 * a21 == 0) &&
                 (b1 * a22 - b2 * a12 == 0) && !
                 ((a11 == 0) && (a12 == 0) && (b1 != 0)) && !
                 ((a21 == 0) && (a22 == 0) && (b2 != 0))

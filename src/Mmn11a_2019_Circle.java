@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Mmn11a_2019 {
+public class Mmn11a_2019_Circle {
     public static void main(String[] args) {
         final double PI = Math.PI;
         Scanner scan = new Scanner(System.in);
