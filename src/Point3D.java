@@ -1,13 +1,13 @@
 public class Point3D {
-    private final double INITIAL_VALUE = 0;
+    private final double INITIAL_POINT_VALUE = 0;
     final double TOLERANCE = 0.0000001;
 
     private double x, y, z;
 
     Point3D() {
-        this.x = INITIAL_VALUE;
-        this.y = INITIAL_VALUE;
-        this.z = INITIAL_VALUE;
+        this.x = INITIAL_POINT_VALUE;
+        this.y = INITIAL_POINT_VALUE;
+        this.z = INITIAL_POINT_VALUE;
     }
 
     Point3D(double x, double y, double z) {
