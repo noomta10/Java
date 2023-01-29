@@ -10,9 +10,14 @@ public class CollectionTest {
         Collection collection = new Collection();
         collection.addBox(1, 1, 1, point);
         collection.addBox(1, 1, 1, point);
-        collection.addBox(1,1,1, point1);
+        collection.addBox(2,2,3, point1);
 
-        System.out.println(collection.longestDistance());
+        Box3D myBox = new Box3D(1,1,2, point);
+
+        System.out.println(collection.howManyContains(myBox));
+        System.out.println(collection.volumeOfSmallestBox(0,2));
+        System.out.println(Arrays.toString(collection.getBoxes()));
+        System.out.println(collection);
 
     }
 }
