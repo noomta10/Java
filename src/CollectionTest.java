@@ -8,7 +8,7 @@ public class CollectionTest {
 
 
         Collection collection = new Collection();
-        collection.addBox(1, 1, 1, point);
+        collection.addBox(1, 2, 1, point);
         collection.addBox(1, 1, 1, point);
         collection.addBox(2,2,3, point1);
 

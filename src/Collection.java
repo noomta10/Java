@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Collection {
     private Box3D[] boxes;
     private int numberOfBoxes;
@@ -44,7 +42,6 @@ public class Collection {
 
         return total;
     }
-
 
     public double longestDistance() {
         if (this.numberOfBoxes < 2)
@@ -125,7 +122,7 @@ public class Collection {
     }
 
     private void moveBoxes(int boxIndex, Box3D newBox) {
-        for (int i = this.numberOfBoxes; i >= boxIndex; i--)
+        for (int i = this.numberOfBoxes; i > boxIndex; i--)
             this.boxes[i] = this.boxes[i - 1];
         this.boxes[boxIndex] = newBox;
     }
