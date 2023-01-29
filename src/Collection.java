@@ -1,5 +1,5 @@
 public class Collection {
-    private Box3D[] boxes;
+    private final Box3D[] boxes;
     private int numberOfBoxes;
     final int MAX_NUM_BOXES = 100;
     final int INITIAL_VALUE = 0;
