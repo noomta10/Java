@@ -57,8 +57,8 @@ public class Box3D {
     }
 
     public String toString() {
-        return "The base point is " + base.toString() + ", length: " + length +
-                ", width: " + width + ", height: " + height;
+        return "The base point is " + base.toString() + ", length= " + length +
+                ", width= " + width + ", height= " + height;
     }
 
     public boolean equals(Box3D otherBox) {
@@ -73,13 +73,13 @@ public class Box3D {
     }
 
     public Point3D getUpRightBackPoint() {
-        Point3D upRightBackPoint = new Point3D();
+        Point3D upRightBackPoint = new Point3D(this.base);
         upRightBackPoint.move(-this.length, this.width, this.height);
         return upRightBackPoint;
     }
 
     public Point3D getCenter() {
-        Point3D centerPoint = new Point3D();
+        Point3D centerPoint = new Point3D(this.base);
         centerPoint.move(-this.length / 2.0, this.width / 2.0, this.height / 2.0);
         return centerPoint;
     }

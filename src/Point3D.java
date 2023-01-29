@@ -47,7 +47,7 @@ public class Point3D {
     }
 
     public String toString() {
-        return "(" + this.x + ", " + this.y + ", " + this.z + " )";
+        return "(" + this.x + ", " + this.y + ", " + this.z + ")";
     }
 
     public boolean equals(Point3D otherPoint) {
