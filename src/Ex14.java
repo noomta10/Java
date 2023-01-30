@@ -44,7 +44,7 @@ public class Ex14 {
     /**
      * Q2
      * The method finds the length of the biggest sub-array which its sum of elements is even
-     * Time complexity: O(n^2)
+     * Time complexity: O(n^3)
      * Space complexity: O(1)
      */
 
