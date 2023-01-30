@@ -3,6 +3,9 @@ public class Ex14 {
         System.out.println(waterVolume(new int[]{1,2,3,1,2,4}));
     }
 
+    // Q1
+    // Time complexity: O(n)
+    // Space complexity: O(1)
     public static int waterVolume(int[] heights) {
         int maxIndex = 0;
         int otherMax = 0;
@@ -14,7 +17,7 @@ public class Ex14 {
                 maxIndex = index;
         }
 
-        // For the indexes to the left of the max height, the max height is their heighest to the right
+        // For the indexes to the left of the max height, the max height is their highest to the right
         for (int index = 0; index < maxIndex; index++) {
             if (heights[index] > otherMax)
                 otherMax = heights[index];
@@ -24,7 +27,7 @@ public class Ex14 {
 
         otherMax = 0;
 
-        // For the indexes to the right of the max height, the max height is their heighest to the left
+        // For the indexes to the right of the max height, the max height is their highest to the left
         for (int index = heights.length - 1; index >= maxIndex; index--) {
             if (heights[index] > otherMax)
                 otherMax = heights[index];
