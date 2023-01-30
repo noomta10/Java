@@ -7,5 +7,9 @@ public class MatrixTest {
         System.out.println(myMatrix.rotateClockwise());
         System.out.println("\n");
         System.out.println(myMatrix.rotateCounterClockwise());
+        System.out.println("\n");
+        System.out.println(myMatrix.makeNegative());
+        System.out.println("\n");
+        System.out.println(myMatrix.imageFilterAverage());
     }
 }

@@ -17,12 +17,12 @@ public class Matrix {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        for (int[] ints : this.matrix) {
-            for (int j = 0; j < this.matrix[0].length; j++)
-                if (j == this.matrix[0].length - 1)
-                    stringBuilder.append(ints[j]).append("\n");
+        for (int[] row : this.matrix) {
+            for (int col = 0; col < this.matrix[0].length; col++)
+                if (col == this.matrix[0].length - 1)
+                    stringBuilder.append(row[col]).append("\n");
                 else
-                    stringBuilder.append(ints[j]).append("\t");
+                    stringBuilder.append(row[col]).append("\t");
         }
 
         return stringBuilder.toString();
@@ -58,7 +58,7 @@ public class Matrix {
         Matrix newMatrix = new Matrix(this.matrix[0].length, this.matrix.length);
         int counter = 0;
 
-        int[] cells = createArray(this);
+        int[] cells = createArray();
 
         for (int col = newMatrix.matrix[0].length - 1; col >= 0; col--) {
             for (int row = 0; row < newMatrix.matrix.length; row++) {
@@ -71,22 +71,8 @@ public class Matrix {
     }
 
     public Matrix rotateCounterClockwise() {
-        Matrix newMatrix = new Matrix(this.matrix[0].length, this.matrix.length);
-        int counter = 0;
-
-        int[] cells = createArray(this);
-        for (int col = 0; col < newMatrix.matrix[0].length; col++) {
-            for (int row = newMatrix.matrix.length - 1; row >= 0; row--) {
-                newMatrix.matrix[row][col] = cells[counter];
-                counter++;
-            }
-        }
-
-        return newMatrix;
-// Easier version
-//        return rotateClockwise().rotateClockwise().rotateClockwise();
+        return rotateClockwise().rotateClockwise().rotateClockwise();
     }
-
 
     private int findNeighbors(int row, int col, Matrix newMatrix) {
         int neighborsNumber = 0;
@@ -103,7 +89,7 @@ public class Matrix {
         return neighborsNumber;
     }
 
-    private int[] createArray(Matrix matrix) {
+    private int[] createArray() {
         int counter = 0;
         int[] cells = new int[this.matrix[0].length * this.matrix.length];
 
