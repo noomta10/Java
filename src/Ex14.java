@@ -1,8 +1,8 @@
 public class Ex14 {
     public static void main(String[] args) {
-        //System.out.println(waterVolume(new int[]{1, 1, 2, 3, 1, 3}));
-        //System.out.println(what(new int[]{1}));
-        System.out.println(solutions(3));
+        System.out.println(waterVolume(new int[]{1, 1, 2, 3, 1, 3}));
+        System.out.println(what(new int[]{1}));
+        System.out.println(solutions(9));
     }
 
     /*
@@ -73,9 +73,10 @@ public class Ex14 {
         }
     }
 
+
     // Q3
     public static int solutions(int number) {
-        if (number < 3 || number > 9)
+        if (number < 3 || number > 30)
             return 0;
         else
             return solutions(number, 1, 1, 1, 0);
@@ -87,9 +88,9 @@ public class Ex14 {
             counter++;
         }
 
-        if (x1 == 3) {
-            if (x2 == 3) {
-                if (x3 == 3) {
+        if (x1 == 10) {
+            if (x2 == 10) {
+                if (x3 == 10) {
                     return counter;
                 } else {
                     x1 = 1;
