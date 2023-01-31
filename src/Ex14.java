@@ -1,7 +1,8 @@
 public class Ex14 {
     public static void main(String[] args) {
-        System.out.println(waterVolume(new int[]{1, 1, 2, 3, 1, 3}));
-        System.out.println(what(new int[]{1}));
+        //System.out.println(waterVolume(new int[]{1, 1, 2, 3, 1, 3}));
+        //System.out.println(what(new int[]{1}));
+        System.out.println(solutions(3));
     }
 
     /*
@@ -74,7 +75,7 @@ public class Ex14 {
 
     // Q3
     public static int solutions(int number) {
-        if (number < 3 || number > 30)
+        if (number < 3 || number > 9)
             return 0;
         else
             return solutions(number, 1, 1, 1, 0);
@@ -82,20 +83,24 @@ public class Ex14 {
 
     public static int solutions(int number, int x1, int x2, int x3, int counter) {
         if (x1 + x2 + x3 == number) {
-            System.out.println("x1 +" + x1 + "x2 +" + x2 + "x3 + " + x3 + " = " + number);
+            System.out.println(x1 + " + " + x2 + " + " + x3 + " = " + number);
             counter++;
         }
 
-        if (x1 == 10) {
-            if (x2 == 10) {
-                if (x3 == 10) {
-
+        if (x1 == 3) {
+            if (x2 == 3) {
+                if (x3 == 3) {
+                    return counter;
+                } else {
+                    x1 = 1;
+                    x2 = 1;
+                    return solutions(number, x1, x2, x3 + 1, counter);
                 }
-                else return solutions(number, x1, x2, x3 + 1, counter);
+            } else {
+                x1 = 1;
+                return solutions(number, x1, x2 + 1, x3, counter);
             }
-            else return solutions(number, x1, x2 + 1, x3, counter);
-        }
-        else return solutions(number, x1 + 1, x2, x3, counter);
+        } else return solutions(number, x1 + 1, x2, x3, counter);
     }
 
 }
