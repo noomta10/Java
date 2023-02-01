@@ -42,14 +42,40 @@ public class IntListTwo {
 
     public void removeNumber(int number) {
         IntNodeTwo current = this.head;
-        IntNodeTwo nextNodeTwo = current.getNext();
 
-        while (current != null && number != current.getNum()) {
-            if (number == current.getNum()) {
-                current.getPrev().setNext(current.getNext());
+        while (current != null && number != current.getNum())
+            current = current.getNext();
+
+        if (current != null) {
+
+            if (current == this.head)
+                this.head = current.getNext();
+            else if (current == this.tail)
+                this.tail = current.getPrev();
+            else
                 current.getNext().setPrev(current.getPrev());
-            }
         }
+    }
+
+
+    public String toString() {
+        StringBuilder listString = new StringBuilder();
+        IntNodeTwo current = this.head;
+
+        if (current == null)
+            listString.append("{}");
+
+        while (current != null) {
+            if (current == this.head)
+                listString.append('{').append(current.getNum()).append(", ");
+            else if (current == this.tail)
+                listString.append(current.getNum()).append('}');
+            else
+                listString.append(current.getNum()).append(", ");
+            current = current.getNext();
+        }
+
+        return listString.toString();
     }
 
 }
