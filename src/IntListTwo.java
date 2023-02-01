@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class IntListTwo {
     private IntNodeTwo head, tail;
 
@@ -49,13 +51,12 @@ public class IntListTwo {
         if (current != null) {
 
             if (current == this.head) {
-                current.getNext().setPrev(null);
                 this.head = current.getNext();
             } else if (current == this.tail) {
                 current.getPrev().setNext(null);
                 this.tail = current.getPrev();
             } else {
-                //current.getNext().setPrev(current.getPrev());
+                current.getNext().setPrev(current.getPrev());
                 current.getPrev().setNext(current.getNext());
             }
 
@@ -81,6 +82,18 @@ public class IntListTwo {
         }
 
         return listString.toString();
+    }
+
+    public void readToList() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter numbers: ");
+        int number = 0;
+
+        while (number != -9999) {
+            number = scanner.nextInt();
+            if (number != -9999)
+                addNumber(number);
+        }
     }
 
 }
