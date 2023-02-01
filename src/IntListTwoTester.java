@@ -8,8 +8,8 @@ public class IntListTwoTester {
         myNode2.setNext(myNode3);
 
         IntListTwo myList = new IntListTwo(myNode1, myNode3);
-        myList.addNumber(4);
-        myList.removeNumber(3);
+        System.out.println(myList);
+        myList.removeNumber(2);
         System.out.println(myList);
 
     }

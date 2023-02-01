@@ -48,12 +48,17 @@ public class IntListTwo {
 
         if (current != null) {
 
-            if (current == this.head)
+            if (current == this.head) {
+                current.getNext().setPrev(null);
                 this.head = current.getNext();
-            else if (current == this.tail)
+            } else if (current == this.tail) {
+                current.getPrev().setNext(null);
                 this.tail = current.getPrev();
-            else
-                current.getNext().setPrev(current.getPrev());
+            } else {
+                //current.getNext().setPrev(current.getPrev());
+                current.getPrev().setNext(current.getNext());
+            }
+
         }
     }
 
