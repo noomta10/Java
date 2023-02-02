@@ -132,7 +132,7 @@ public class IntListTwo {
             while (leftNode != rightNode) {
                 if (leftNode.getNum() % 2 != 0)
                     return newLength;
-                else if (rightNode.getNum() % 2 != 0 )
+                else if (rightNode.getNum() % 2 != 0)
                     return newLength;
                 else {
                     newLength--;
@@ -142,6 +142,31 @@ public class IntListTwo {
             }
             return length() / 2;
         }
+    }
+
+    public boolean isAverage(double num) {
+        int sum = this.sum();
+        int count = this.length();
+        double average = (double) sum / count;
+
+        IntNodeTwo leftNode = this.head;
+        IntNodeTwo rightNode = this.tail;
+
+        while (rightNode != null && leftNode != rightNode.getNext()) {
+            if (average == num)
+                return true;
+            else if (average > num) {
+                sum -= rightNode.getNum();
+                rightNode = rightNode.getPrev();
+            } else {
+                sum -= leftNode.getNum();
+                leftNode = leftNode.getNext();
+            }
+            count--;
+            average = (double) sum / count;
+        }
+
+        return false;
 
     }
 
