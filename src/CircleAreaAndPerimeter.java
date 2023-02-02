@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class q7 {
+public class CircleAreaAndPerimeter {
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
         System.out.print("Enter radius: ");
