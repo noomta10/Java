@@ -12,7 +12,7 @@ public class IntListTwoTester {
         IntListTwo myList = new IntListTwo(myNode1, myNode3);
 
         System.out.println(myList);
-        myList.readToList();
+        myList.addNumber(1);
         System.out.println(myList);
     }
 }

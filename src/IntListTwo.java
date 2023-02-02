@@ -29,7 +29,7 @@ public class IntListTwo {
         this.tail = this.tail.getNext();
 
         // To clear the requested spot for the new node, we need to move all the nodes after it
-        while (index.getNum() >= number && index != null) {
+        while ((index != null) && (index.getNum() >= number)) {
             index.getNext().setNum(index.getNum());
             index = index.getPrev();
         }
@@ -63,7 +63,6 @@ public class IntListTwo {
         }
     }
 
-
     public String toString() {
         StringBuilder listString = new StringBuilder();
         IntNodeTwo current = this.head;
@@ -95,5 +94,55 @@ public class IntListTwo {
                 addNumber(number);
         }
     }
+
+    public int length() {
+        int counter = 0;
+        IntNodeTwo current = this.head;
+
+        while (current != null) {
+            counter += 1;
+            current = current.getNext();
+        }
+
+        return counter;
+    }
+
+    public int sum() {
+        int sum = 0;
+        IntNodeTwo current = this.head;
+
+        while (current != null) {
+            sum += current.getNum();
+            current = current.getNext();
+        }
+
+        return sum;
+    }
+
+    public int maxLength() {
+        int sum = this.sum();
+        if (sum % 2 == 0)
+            return this.length();
+        else {
+            IntNodeTwo leftNode = this.head;
+            IntNodeTwo rightNode = this.tail;
+            int newLength = this.length() - 1;
+
+            while (leftNode != rightNode) {
+                if (leftNode.getNum() % 2 == 0)
+                    return newLength;
+                else if (rightNode.getNum() % 2 == 0)
+                    return newLength;
+                else {
+                    newLength--;
+                    leftNode = leftNode.getNext();
+                    rightNode = rightNode.getPrev();
+                }
+            }
+        }
+
+    }
+
+}
 
 }
