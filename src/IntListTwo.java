@@ -72,11 +72,12 @@ public class IntListTwo {
 
         while (current != null) {
             if (current == this.head)
-                listString.append('{').append(current.getNum()).append(", ");
-            else if (current == this.tail)
+                listString.append('{');
+            if (current == this.tail) {
                 listString.append(current.getNum()).append('}');
-            else
-                listString.append(current.getNum()).append(", ");
+                return listString.toString();
+            }
+            listString.append(current.getNum()).append(", ");
             current = current.getNext();
         }
 
@@ -85,7 +86,7 @@ public class IntListTwo {
 
     public void readToList() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter numbers: ");
+        System.out.print("Enter numbers, and -9999 to end: ");
         int number = 0;
 
         while (number != -9999) {
@@ -129,9 +130,9 @@ public class IntListTwo {
             int newLength = this.length() - 1;
 
             while (leftNode != rightNode) {
-                if (leftNode.getNum() % 2 == 0)
+                if (leftNode.getNum() % 2 != 0)
                     return newLength;
-                else if (rightNode.getNum() % 2 == 0)
+                else if (rightNode.getNum() % 2 != 0 )
                     return newLength;
                 else {
                     newLength--;
@@ -139,10 +140,9 @@ public class IntListTwo {
                     rightNode = rightNode.getPrev();
                 }
             }
+            return length() / 2;
         }
 
     }
-
-}
 
 }
