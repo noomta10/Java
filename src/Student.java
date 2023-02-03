@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class Student {
     private static int id = 1000;
-    private String firstName;
-    private String lastName;
-    private int year;
+    private final String firstName;
+    private final String lastName;
+    private final int year;
     private String studentId;
-    private ArrayList<String> courses = new ArrayList<>();
+    private final ArrayList<String> courses = new ArrayList<>();
     private int tuitionBalance = 0;
-    private int costOfCourse = 500;
+    final int costOfCourse = 500;
 
     // Constructor
     public Student() {
@@ -19,11 +19,12 @@ public class Student {
         this.firstName = scanner.nextLine();
         System.out.print("Enter last name: ");
         this.lastName = scanner.nextLine();
-        System.out.println("Enter year:\n" +
-                "1. Freshman\n" +
-                "2. Sophomore\n" +
-                "3. Junior\n" +
-                "4. Senior");
+        System.out.println("""
+                Enter year:
+                1. Freshman
+                2. Sophomore
+                3. Junior
+                4. Senior""");
         this.year = scanner.nextInt();
         setID();
     }
