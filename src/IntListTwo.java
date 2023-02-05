@@ -1,3 +1,5 @@
+// OU Mmn 15- linked lists
+
 import java.util.Scanner;
 
 public class IntListTwo {

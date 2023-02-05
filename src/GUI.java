@@ -1,9 +1,11 @@
+// Java swing basic use- frames, labels, images etc.
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
 public class GUI {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         ImageIcon image = new ImageIcon("pics/programmer.png");
         Border border = BorderFactory.createLineBorder(new Color(152, 134, 103), 5);
 
@@ -28,6 +30,5 @@ public class GUI {
         frame.setVisible(true);
         frame.add(label);
         frame.pack();
-
     }
 }

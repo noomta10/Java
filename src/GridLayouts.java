@@ -1,3 +1,5 @@
+// Grid layout- basic use, uses all the space in the frame
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -7,7 +9,7 @@ public class GridLayouts {
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
-        frame.setLayout(new GridLayout(3,3,15,15));
+        frame.setLayout(new GridLayout(3, 3, 15, 15));
 
         frame.add(new JButton("1"));
         frame.add(new JButton("2"));

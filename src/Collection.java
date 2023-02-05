@@ -1,3 +1,4 @@
+// Collection class- array of box3D
 public class Collection {
     private final Box3D[] boxes;
     private int numberOfBoxes;
@@ -105,11 +106,11 @@ public class Collection {
     }
 
     public String toString() {
-        String finalString = "";
+        StringBuilder finalString = new StringBuilder();
         for (int i = 0; i < numberOfBoxes; i++)
-            finalString += "Box no. " + (i + 1) + ": " + this.boxes[i] + "\n";
+            finalString.append("Box no. ").append(i + 1).append(": ").append(this.boxes[i]).append("\n");
 
-        return finalString;
+        return finalString.toString();
     }
 
     private int findSuitableIndex(Box3D box) {

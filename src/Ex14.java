@@ -1,8 +1,9 @@
+// OU Mmn 14- efficiency and recursion
 public class Ex14 {
     public static void main(String[] args) {
         System.out.println(waterVolume(new int[]{1, 1, 2, 3, 1, 3}));
-        System.out.println(what(new int[]{1}));
-        System.out.println(solutions(9));
+        System.out.println(what(new int[]{1, 2, 3}));
+        System.out.println(solutions(5));
     }
 
     /*
@@ -69,6 +70,7 @@ public class Ex14 {
                 }
 
             }
+
             return 0;
         }
     }

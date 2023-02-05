@@ -1,3 +1,5 @@
+// Flow Layout- basic use
+
 import javax.swing.*;
 import java.awt.*;
 

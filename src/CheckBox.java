@@ -10,7 +10,7 @@ public class CheckBox extends JFrame implements ActionListener {
     ImageIcon xIcon;
     ImageIcon checkIcon;
 
-    CheckBox(){
+    CheckBox() {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLayout(new FlowLayout());
 
@@ -35,7 +35,7 @@ public class CheckBox extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == button){
+        if (e.getSource() == button) {
             System.out.println(checkBox.isSelected());
         }
     }

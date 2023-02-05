@@ -1,9 +1,11 @@
+// Circle array class
+
 import java.util.Arrays;
 
 public class CircleArray {
 
     // Attributes and constants
-    private Circle[] circleArray;
+    private final Circle[] circleArray;
     private int numberOfCircles;
     public final int MAX_CIRCLES = 10;
 

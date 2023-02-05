@@ -1,3 +1,5 @@
+// Deserialization- the class reads the byte stream file that the serialized class created and converts it into an object.
+
 import java.io.*;
 
 public class Deserialization {
@@ -13,7 +15,6 @@ public class Deserialization {
         System.out.println(user.name);
         System.out.println(user.password);
         user.sayHello();
-
     }
 }
 
