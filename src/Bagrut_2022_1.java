@@ -1,3 +1,5 @@
+// Multiply two arrays
+
 import java.util.Arrays;
 
 public class Bagrut_2022_1 {
@@ -11,21 +13,19 @@ public class Bagrut_2022_1 {
         int m, k;
         int[] longer;
 
-        if (arr1.length > arr2.length){
+        if (arr1.length > arr2.length) {
             m = arr1.length;
             k = arr2.length;
             longer = arr1;
-        }
-
-        else {
-          m = arr2.length;
-          k = arr1.length;
-          longer = arr2;
+        } else {
+            m = arr2.length;
+            k = arr1.length;
+            longer = arr2;
         }
 
         int[] arr3 = new int[m];
 
-        for (int i = 0; i < k; i ++)
+        for (int i = 0; i < k; i++)
             arr3[i] = arr1[i] * arr2[i];
 
         System.arraycopy(longer, k, arr3, k, m - k);

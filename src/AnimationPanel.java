@@ -16,7 +16,7 @@ public class AnimationPanel extends JPanel implements ActionListener {
     int y = 0;
 
 
-    AnimationPanel(){
+    AnimationPanel() {
         this.setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
         this.setBackground(Color.black);
         this.setOpaque(true);
@@ -28,21 +28,21 @@ public class AnimationPanel extends JPanel implements ActionListener {
 
     }
 
-    public void paint(Graphics g){
+    public void paint(Graphics g) {
         super.paint(g);
         Graphics2D g2D = (Graphics2D) g;
-        g2D.drawImage(background, 0,0, null);
-        g2D.drawImage(enemy, x,y,null);
+        g2D.drawImage(background, 0, 0, null);
+        g2D.drawImage(enemy, x, y, null);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (x >= PANEL_WIDTH - enemy.getWidth(null) || x < 0){
+        if (x >= PANEL_WIDTH - enemy.getWidth(null) || x < 0) {
             xVelocity = xVelocity * -1;
         }
         x = x + xVelocity;
 
-        if (y >= PANEL_HEIGHT - enemy.getHeight(null) || y < 0){
+        if (y >= PANEL_HEIGHT - enemy.getHeight(null) || y < 0) {
             yVelocity = yVelocity * -1;
         }
         y = y + yVelocity;

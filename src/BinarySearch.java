@@ -1,6 +1,7 @@
+// Find index of a given element in an array, use binary search
 public class BinarySearch {
     public static void main(String[] args) {
-        int x = -1;
+        int x = 3;
         int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
         System.out.println(binarySearch(array, x));
     }

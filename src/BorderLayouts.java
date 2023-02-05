@@ -1,15 +1,16 @@
+// Border layout basic use (north, south, east, west)
 import java.awt.*;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 
 public class BorderLayouts {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(700,700);
+        frame.setSize(700, 700);
         frame.setVisible(true);
-        frame.setLayout(new BorderLayout(10,10));
+        frame.setLayout(new BorderLayout(10, 10));
 
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
@@ -23,11 +24,11 @@ public class BorderLayouts {
         panel4.setBackground(Color.green);
         panel5.setBackground(Color.cyan);
 
-        panel1.setPreferredSize(new Dimension(100,100));
-        panel2.setPreferredSize(new Dimension(100,100));
-        panel3.setPreferredSize(new Dimension(100,100));
-        panel4.setPreferredSize(new Dimension(100,100));
-        panel5.setPreferredSize(new Dimension(100,100));
+        panel1.setPreferredSize(new Dimension(100, 100));
+        panel2.setPreferredSize(new Dimension(100, 100));
+        panel3.setPreferredSize(new Dimension(100, 100));
+        panel4.setPreferredSize(new Dimension(100, 100));
+        panel5.setPreferredSize(new Dimension(100, 100));
 
         frame.add(panel1, BorderLayout.NORTH);
         frame.add(panel2, BorderLayout.EAST);
@@ -51,19 +52,16 @@ public class BorderLayouts {
 
         panel5.setLayout(new BorderLayout());
 
-        panel6.setPreferredSize(new Dimension(100,100));
-        panel7.setPreferredSize(new Dimension(100,100));
-        panel8.setPreferredSize(new Dimension(100,100));
-        panel9.setPreferredSize(new Dimension(100,100));
-        panel10.setPreferredSize(new Dimension(100,100));
+        panel6.setPreferredSize(new Dimension(100, 100));
+        panel7.setPreferredSize(new Dimension(100, 100));
+        panel8.setPreferredSize(new Dimension(100, 100));
+        panel9.setPreferredSize(new Dimension(100, 100));
+        panel10.setPreferredSize(new Dimension(100, 100));
 
-        panel5.add(panel6,BorderLayout.NORTH);
-        panel5.add(panel7,BorderLayout.SOUTH);
-        panel5.add(panel8,BorderLayout.WEST);
-        panel5.add(panel9,BorderLayout.EAST);
-        panel5.add(panel10,BorderLayout.CENTER);
-
-
-
+        panel5.add(panel6, BorderLayout.NORTH);
+        panel5.add(panel7, BorderLayout.SOUTH);
+        panel5.add(panel8, BorderLayout.WEST);
+        panel5.add(panel9, BorderLayout.EAST);
+        panel5.add(panel10, BorderLayout.CENTER);
     }
 }

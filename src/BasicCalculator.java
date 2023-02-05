@@ -4,7 +4,7 @@
 import java.util.Scanner;
 
 public class BasicCalculator {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter operation: ");
         String operator = input.next();
@@ -13,13 +13,12 @@ public class BasicCalculator {
         System.out.print("Enter another number: ");
         int number2 = input.nextInt();
 
-        if (operator.equals("+"))
-            System.out.println("Sum: " + (number1 + number2));
-        else if (operator.equals("-"))
-            System.out.println("remainder: " + (number1 - number2));
-        else if (operator.equals("/"))
-            System.out.println("Quotient: " + (number1 / number2));
-        else if (operator.equals("*"))
-            System.out.println("Product: " + (number1 * number2));
+        switch (operator) {
+            case "+" -> System.out.println("Sum: " + (number1 + number2));
+            case "-" -> System.out.println("remainder: " + (number1 - number2));
+            case "/" -> System.out.println("Quotient: " + (number1 / number2));
+            case "*" -> System.out.println("Product: " + (number1 * number2));
+            default -> System.out.println("That is not a valid operator");
+        }
     }
 }

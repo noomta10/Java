@@ -4,7 +4,7 @@ public class AnimationFrame extends JFrame {
 
     AnimationPanel panel;
 
-    AnimationFrame(){
+    AnimationFrame() {
         panel = new AnimationPanel();
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

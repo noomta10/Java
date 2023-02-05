@@ -11,9 +11,9 @@ public class Box3D {
     }
 
     Box3D(int length, int width, int height, Point3D base) {
-        this.length = length < INITIAL_RIB_VALUE ? INITIAL_RIB_VALUE : length;
-        this.width = width < INITIAL_RIB_VALUE ? INITIAL_RIB_VALUE : width;
-        this.height = height < INITIAL_RIB_VALUE ? INITIAL_RIB_VALUE : height;
+        this.length = Math.max(length, INITIAL_RIB_VALUE);
+        this.width = Math.max(width, INITIAL_RIB_VALUE);
+        this.height = Math.max(height, INITIAL_RIB_VALUE);
         this.base = new Point3D(base);
     }
 
