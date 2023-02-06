@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class MultiDimensionalArrays {
     public static void main(String[] args) {
-        int[][] athleteTimes = {{1, 2, 3}, {1, 2, 3}};
+        int[][] athleteTimes = {{1, 2, 3}, {1, 2, 4}};
 
         int tracks = athleteTimes.length;
         int athletes = athleteTimes[0].length;
@@ -13,10 +13,10 @@ public class MultiDimensionalArrays {
         int[] trackSum = new int[tracks];
         int[] athletesSum = new int[athletes];
 
-        for (int i = 0; i < tracks; i++) {
-            for (int j = 0; j < athletes; j++) {
-                trackSum[i] += athleteTimes[i][j];
-                athletesSum[j] += athleteTimes[i][j];
+        for (int track = 0; track < tracks; track++) {
+            for (int athlete = 0; athlete < athletes; athlete++) {
+                trackSum[track] += athleteTimes[track][athlete];
+                athletesSum[athlete] += athleteTimes[track][athlete];
             }
         }
 

@@ -2,7 +2,7 @@ public class PointTester {
     public static void main(String[] args) {
 
         Point point = new Point(0, 4);
-        Point point1 = new Point(4,7);
+        Point point1 = new Point(4, 7);
         System.out.println(point.distance(point1));
 
         Point point2 = new Point(1, 1);

@@ -1,6 +1,8 @@
+// Checks that the parenthesis are syntax valid
+
 public class Parenthesis {
     public static void main(String[] args) {
-        System.out.println(checkParenthesis("(((hello))"));
+        System.out.println(checkParenthesis("(((hello)))"));
     }
 
     public static boolean checkParenthesis(String string) {

@@ -1,3 +1,6 @@
+// Multithreading- thread #1 and #2 run in parallel, both countdown from 10 to 0.
+// Thread #2 starts 3 seconds after thread #1
+
 public class Multithreading {
     public static void main(String[] args) throws InterruptedException {
         MultithreadingRunnable1 runnable1 = new MultithreadingRunnable1();

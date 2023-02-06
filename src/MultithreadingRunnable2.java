@@ -1,7 +1,7 @@
-public class MultithreadingRunnable2 implements Runnable{
+public class MultithreadingRunnable2 implements Runnable {
     @Override
     public void run() {
-        for (int i = 10; i >= 1; i--){
+        for (int i = 10; i >= 1; i--) {
             System.out.println("#2 Thread: " + i);
             try {
                 Thread.sleep(1000);

@@ -1,3 +1,4 @@
+// Point class
 public class Point {
     private final int DEFAULT_VALUE = 0;
     private int x;
