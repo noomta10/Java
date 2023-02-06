@@ -3,8 +3,8 @@
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
-public class q19 {
-    public static void main(String[] args){
+public class CountCharacters {
+    public static void main(String[] args) {
         int letters = 0;
         int numbers = 0;
         int spaces = 0;
@@ -15,17 +15,18 @@ public class q19 {
         String sentence = input.nextLine();
         char[] characters = sentence.toCharArray();
 
-        for (char character : characters){
+        for (char character : characters) {
             String stringCharacter = Character.toString(character);
             if (Pattern.matches("[a-zA-z]", stringCharacter))
-                letters ++;
+                letters++;
             else if (Pattern.matches("[0-9]", stringCharacter))
-                numbers ++;
+                numbers++;
             else if (Pattern.matches(" ", stringCharacter))
-                spaces ++;
+                spaces++;
             else
-                others ++;
+                others++;
         }
+
         System.out.printf("Letters: %d\nNumbers: %d\nSpaces: %d\nOthers: %d", letters, numbers, spaces, others);
     }
 }

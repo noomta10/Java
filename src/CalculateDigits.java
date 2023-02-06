@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class q24 {
+public class CalculateDigits {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter number: ");

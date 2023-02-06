@@ -2,8 +2,8 @@
 
 import java.util.Scanner;
 
-public class q35 {
-    public static void main(String[] args){
+public class SecondsConvertor {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter seconds: ");
         int seconds = input.nextInt();

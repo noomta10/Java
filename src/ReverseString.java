@@ -3,7 +3,7 @@
 import java.util.Scanner;
 import java.lang.*;
 
-class q18 {
+class ReverseString {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter sentence: ");

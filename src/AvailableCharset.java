@@ -2,8 +2,8 @@
 
 import java.nio.charset.Charset;
 
-public class q21 {
-    public static void main(String[] args){
+public class AvailableCharset {
+    public static void main(String[] args) {
         for (String charset : Charset.availableCharsets().keySet())
             System.out.println(charset);
     }

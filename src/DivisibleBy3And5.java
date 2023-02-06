@@ -1,6 +1,6 @@
-// 50. Write a Java program to print numbers between 1 to 100 which are divisible by 3, 5 and by both.
+// 50. Write a Java program to print numbers between 1 and 100 which are divisible by 3, 5 and by both.
 
-public class q30 {
+public class DivisibleBy3And5 {
     public static void main(String[] args){
         System.out.println("Divided by 3 & 5: ");
         for (int i = 1; i <= 100; i++) {

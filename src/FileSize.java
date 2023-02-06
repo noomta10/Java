@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Scanner;
 
-public class q25 {
+public class FileSize {
     public static void main(String[] args) throws IOException {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter path: ");

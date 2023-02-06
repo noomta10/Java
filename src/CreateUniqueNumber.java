@@ -1,7 +1,7 @@
 // 39. Write a Java program to create and display unique three-digit number using 1, 2, 3, 4.
 // Also count how many three-digit numbers are there.
 
-public class q20 {
+public class CreateUniqueNumber {
     public static void main(String[] args) {
         int count = 0;
         for (int i = 1; i <= 4; i++) {
