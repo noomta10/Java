@@ -1,3 +1,4 @@
+// OU Mmn 15- linked lists
 public class IntNodeTwo {
     private int num;
     private IntNodeTwo next, prev;

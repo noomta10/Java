@@ -1,6 +1,8 @@
+// OU Mmn 11- The basics of the language
+
 import java.util.Scanner;
 
-public class Mmn11b_2019_Equations {
+public class Equations {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("This program solves a system of 2 linear equations");

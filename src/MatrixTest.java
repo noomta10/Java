@@ -1,3 +1,5 @@
+// OU Mmn 13- loops and arrays
+
 public class MatrixTest {
     public static void main(String[] args) {
         int[][] array = {{1, 2, 3}, {4, 5, 6}};

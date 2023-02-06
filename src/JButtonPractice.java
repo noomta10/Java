@@ -8,7 +8,7 @@ public class JButtonPractice extends JFrame implements ActionListener {
     JRadioButton hamburgerButton;
     JRadioButton hotdogButton;
 
-    JButtonPractice(){
+    JButtonPractice() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new FlowLayout());
 
@@ -35,9 +35,9 @@ public class JButtonPractice extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==pizzaButton)
+        if (e.getSource() == pizzaButton)
             System.out.println("You ordered a pizza!");
-        else if (e.getSource()==hamburgerButton)
+        else if (e.getSource() == hamburgerButton)
             System.out.println("You ordered a hamburger!");
         else
             System.out.println("You ordered a hot dog!");

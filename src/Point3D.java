@@ -1,3 +1,5 @@
+// OU Mmn 12- writing and using classes
+
 public class Point3D {
     private final double INITIAL_POINT_VALUE = 0;
     final double TOLERANCE = 0.0000001;

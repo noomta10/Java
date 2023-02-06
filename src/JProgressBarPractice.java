@@ -3,14 +3,14 @@ import java.awt.*;
 
 public class JProgressBarPractice {
     JFrame frame = new JFrame();
-    JProgressBar bar = new JProgressBar(0,100);
+    JProgressBar bar = new JProgressBar(0, 100);
 
-    JProgressBarPractice(){
+    JProgressBarPractice() {
 
         bar.setValue(0);
-        bar.setBounds(0,0,420,50);
+        bar.setBounds(0, 0, 420, 50);
         bar.setStringPainted(true);
-        bar.setFont(new Font("MV Boli",Font.BOLD,25));
+        bar.setFont(new Font("MV Boli", Font.BOLD, 25));
         bar.setForeground(Color.red);
         bar.setBackground(Color.black);
 
@@ -24,9 +24,9 @@ public class JProgressBarPractice {
     }
 
     public void fill() {
-        int counter =0;
+        int counter = 0;
 
-        while(counter<=100) {
+        while (counter <= 100) {
 
             bar.setValue(counter);
             try {
@@ -35,7 +35,7 @@ public class JProgressBarPractice {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
             }
-            counter +=1;
+            counter += 1;
         }
         bar.setString("Done! :)");
     }

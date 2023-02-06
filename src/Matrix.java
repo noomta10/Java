@@ -1,3 +1,5 @@
+// OU Mmn 13- loops and arrays
+
 public class Matrix {
     private final int[][] matrix;
     final int BLACK = 255;

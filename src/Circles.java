@@ -1,6 +1,8 @@
+// OU Mmn 11- The basics of the language
+
 import java.util.Scanner;
 
-public class Mmn11a_2019_Circle {
+public class Circles {
     public static void main(String[] args) {
         final double PI = Math.PI;
         Scanner scan = new Scanner(System.in);

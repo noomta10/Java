@@ -7,7 +7,8 @@ public class JColorChooserPractice extends JFrame implements ActionListener {
 
     JButton button;
     JLabel label;
-    JColorChooserPractice(){
+
+    JColorChooserPractice() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new FlowLayout());
 
@@ -28,7 +29,7 @@ public class JColorChooserPractice extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == button){
+        if (e.getSource() == button) {
             new JColorChooser();
             Color color = JColorChooser.showDialog(null, "Colors", Color.black);
             label.setForeground(color);

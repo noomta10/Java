@@ -8,16 +8,16 @@ public class KeyListenerPractice extends JFrame implements KeyListener {
     JLabel label;
     ImageIcon icon;
 
-    KeyListenerPractice(){
+    KeyListenerPractice() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(500,500);
+        this.setSize(500, 500);
         this.setLayout(null);
         this.addKeyListener(this);
 
         icon = new ImageIcon("pics/rocket.png");
 
         label = new JLabel();
-        label.setBounds(200,200,100,100);
+        label.setBounds(200, 200, 100, 100);
         label.setIcon(icon);
 
         this.getContentPane().setBackground(Color.black);
@@ -50,7 +50,7 @@ public class KeyListenerPractice extends JFrame implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        System.out.println("Char released: " + e.getKeyChar() );
-        System.out.println("Char released: " + e.getKeyCode() );
+        System.out.println("Char released: " + e.getKeyChar());
+        System.out.println("Char released: " + e.getKeyCode());
     }
 }

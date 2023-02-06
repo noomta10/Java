@@ -1,3 +1,6 @@
+// Multidimensional arrays- calculates the total time athletes ran in each track
+// and the total time each athlete ran
+
 import java.util.Arrays;
 
 public class MultiDimensionalArrays {

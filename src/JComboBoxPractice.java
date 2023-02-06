@@ -7,7 +7,7 @@ public class JComboBoxPractice extends JFrame implements ActionListener {
 
     JComboBox<String> comboBox;
 
-    JComboBoxPractice(){
+    JComboBoxPractice() {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLayout(new FlowLayout());
 
@@ -35,7 +35,7 @@ public class JComboBoxPractice extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource()==comboBox){
+        if (e.getSource() == comboBox) {
             System.out.println(comboBox.getSelectedItem());
             System.out.println(comboBox.getSelectedIndex());
         }

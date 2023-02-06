@@ -1,3 +1,5 @@
+// OU Mmn 12- writing and using classes
+
 public class Box3D {
     private Point3D base;
     private int length, width, height;

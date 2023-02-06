@@ -1,4 +1,4 @@
-// Collection class- array of box3D
+// OU Mmn 13- loops and arrays
 public class Collection {
     private final Box3D[] boxes;
     private int numberOfBoxes;

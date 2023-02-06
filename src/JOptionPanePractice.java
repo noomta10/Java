@@ -1,3 +1,5 @@
+// JOptionPane basic GUI
+
 import javax.swing.*;
 
 public class JOptionPanePractice {

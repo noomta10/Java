@@ -14,7 +14,7 @@ public class JMenuPractice extends JFrame implements ActionListener {
     JMenuItem saveItem;
     JMenuItem exitItem;
 
-    JMenuPractice(){
+    JMenuPractice() {
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setSize(500, 500);
         this.setLayout(new FlowLayout());

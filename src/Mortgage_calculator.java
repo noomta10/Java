@@ -1,8 +1,10 @@
+// Calculates mortgage according to a formula
+
 import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Mortgage_calculator {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         final byte MONTHS_IN_YEAR = 12;
         final byte PERCENT = 100;
 
@@ -33,7 +35,7 @@ public class Mortgage_calculator {
         while (true) {
             System.out.print("Period (years): ");
             byte years = scanner.nextByte();
-            if (years > 0 && years <= 30 ) {
+            if (years > 0 && years <= 30) {
                 numberOfPayments = years * MONTHS_IN_YEAR;
                 break;
             }
@@ -42,7 +44,7 @@ public class Mortgage_calculator {
 
         double mortgage = (principal
                 * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
-                / (Math.pow(1 + monthlyInterest, numberOfPayments) -1));
+                / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1));
 
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
 
