@@ -1,6 +1,6 @@
 // 122. Write a Java program to find a contiguous subArray with the smallest sum from a given array of integers.
 
-public class q102 {
+public class SubArrayMinMax {
     public static void main(String[] args) {
         int[] numbers = {-2, -3, 4, -3, -3, 100, 1, -1, -100};
         int min_sum = 0;
