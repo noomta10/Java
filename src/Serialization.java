@@ -1,3 +1,7 @@
+// Serialization- the process of converting an object into a byte stream.
+// a file with byte stream will be created (should end with .ser)
+
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
@@ -18,6 +22,6 @@ public class Serialization {
         System.out.println("Object info saved!");
 
         long serialVersionUID = ObjectStreamClass.lookup(user.getClass()).getSerialVersionUID();
-        System.out.println("serialVersionUID: "+serialVersionUID);
+        System.out.println("serialVersionUID: " + serialVersionUID);
     }
 }

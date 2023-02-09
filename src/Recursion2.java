@@ -3,8 +3,8 @@ public class Recursion2 {
         printUp(2);
     }
 
-    public static void printUp(int number){
-        if (number > 0){
+    public static void printUp(int number) {
+        if (number > 0) {
             printUp(number - 1);
             System.out.println(number);
         }

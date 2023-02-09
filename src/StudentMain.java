@@ -1,3 +1,5 @@
+// Student Management System
+
 import java.util.Scanner;
 
 public class StudentMain {
@@ -15,7 +17,7 @@ public class StudentMain {
             System.out.println("\n");
         }
 
-        for (Student student : students){
+        for (Student student : students) {
             System.out.println(student + "\n");
         }
     }

@@ -1,3 +1,5 @@
+// Basic use of threads
+
 public class Threads {
     public static void main(String[] args) throws InterruptedException {
         System.out.println(Thread.activeCount());

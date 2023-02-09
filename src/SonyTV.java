@@ -1,3 +1,5 @@
+// SonyTv class
+
 public class SonyTV {
 
     private String model;
