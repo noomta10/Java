@@ -46,6 +46,29 @@ class LinkedList {
         }
         System.out.println();
     }
+
+    public void delete(int data) {
+        if (head == null) {
+            System.out.println("List is empty\n");
+            return;
+        }
+
+        if (head.data == data) {
+            head = head.next;
+            return;
+        }
+
+        Node current = head;
+        while (current.next != null) {
+            if (current.next.data == data) {
+                current.next = current.next.next;
+                return;
+            }
+            current = current.next;
+        }
+
+        System.out.println("Data not found in the list");
+    }
 }
 
 
@@ -96,16 +119,32 @@ public class Main {
     }
 
 
-    public static LinkedList makeHeap() {
+    public static LinkedList makeHeap(LinkedList heap) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter file name for array input: ");
         String fileName = scanner.nextLine();
         int[] numbers_array = getInputFromFile(fileName);
-        LinkedList linkedList = createLinkedList(numbers_array);
-        linkedList.display();
+        heap = createLinkedList(numbers_array);
+        heap.display();
 
-        return linkedList;
+        return heap;
     }
+
+
+    public static LinkedList insert(LinkedList heap) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a number to insert: ");
+        int number_to_insert = scanner.nextInt();
+        heap.add(number_to_insert);
+        heap.display();
+
+        return heap;
+    }
+
+
+    // public static LinkedList extractMin(LinkedList heap) {
+    //     return;  
+    // }
 
 
     public static void displayMenu(String listType, LinkedList heapA, LinkedList heapB) {
@@ -119,16 +158,16 @@ public class Main {
 
             switch (operationNumber) {
                 case 1:
-                    heapA = makeHeap();
+                    heapA = makeHeap(heapA);
                     break;
                 case 2:
-                    heapB = makeHeap();
+                    heapB = makeHeap(heapB);
                     break;
                 case 3:
-                    // handle INSERT A
+                    heapA = insert(heapA);
                     break;
                 case 4:
-                    // handle INSERT B
+                    heapB = insert(heapB);
                     break;
                 case 5:
                     // handle MINIMUM A
