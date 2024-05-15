@@ -69,16 +69,16 @@ public class Main {
             return numbers;
                 
             } else {
-                System.out.println("Error: file empty");
+                System.out.println("Error: file empty\n");
                 bufferReader.close();
                 fileReader.close();
                 System.exit(-1);
             }
 
         } catch (FileNotFoundException e) {
-            System.out.println("Error: file not found.");
+            System.out.println("Error: file not found\n");
         } catch (IOException e) {
-            System.out.println("Error: can not read file.");
+            System.out.println("Error: can not read file\n");
             e.printStackTrace();
         }
             return null;
@@ -96,24 +96,54 @@ public class Main {
     }
 
 
-    public static String[] get_user_parameters() {
+    public static void display_menu(String listType) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter file name: ");
-        String fileName = scanner.nextLine();
+        System.out.print("Enter desired operation:\n1. MAKE-HEAP\n2. INSERT\n3. MINIMUM\n4. EXTRACT MIN\n5. UNION\n");
+        int operation_number = scanner.nextInt();
+
+        if (operation_number == 1) {
+            
+        } else if (operation_number == 2) {
+            scanner.close();
+            return;
+        } else if (operation_number == 2) {
+            scanner.close();
+            return;
+        } else if (operation_number == 2) {
+            scanner.close();
+            return;
+        } else if (operation_number == 2) {
+            scanner.close();
+            return;
+        } else {
+            System.out.println("Error: operation number must be a number between 1 and 5\n");
+            display_menu(listType);
+        }
+
+        scanner.close();
+    }
+
+
+    public static String get_list_type() {
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Enter array type (sorted or not sorted): ");
         String listType = scanner.nextLine();
+        if (listType != "sorted" || listType != "not sorted") {
+            System.out.println("Error: list type shold be 'sorted' or 'not sorted'\n");
+            System.exit(-1);
+        }
         scanner.close();
 
-        return new String[]{fileName, listType};
+        return listType;
     }
 
     public static void main(String[] args) {
-        String[] parameters = get_user_parameters();
-        String fileName = parameters[0];
-        String listType = parameters[1];
-        int[] numbers_array = get_input_from_file(fileName);
-        LinkedList linkedList = createLinkedList(numbers_array);
-        linkedList.display();
+        String listType = get_list_type();
+        display_menu(listType);
+        
+        // int[] numbers_array = get_input_from_file(fileName);
+        // LinkedList linkedList = createLinkedList(numbers_array);
+        // linkedList.display();
 
     }
 }
