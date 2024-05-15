@@ -50,7 +50,7 @@ class LinkedList {
 
 
 public class Main {
-    public static int[] get_input_from_file(String fileName) {
+    public static int[] getInputFromFile(String fileName) {
         try {
             FileReader fileReader = new FileReader(fileName);
             BufferedReader bufferReader = new BufferedReader(new FileReader(fileName));
@@ -96,31 +96,68 @@ public class Main {
     }
 
 
-    public static void display_menu(String listType) {
+    public static LinkedList makeHeap() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter desired operation:\n1. MAKE-HEAP\n2. INSERT\n3. MINIMUM\n4. EXTRACT MIN\n5. UNION\n");
-        int operationNumber = scanner.nextInt();
+        System.out.print("Enter file name for array input: ");
+        String fileName = scanner.nextLine();
+        int[] numbers_array = getInputFromFile(fileName);
+        LinkedList linkedList = createLinkedList(numbers_array);
+        linkedList.display();
 
-        if (operationNumber == 1) {
-            System.out.println("hola\n");
-        } else if (operationNumber == 2) {
-            return;
-        } else if (operationNumber == 3) {
-            return;
-        } else if (operationNumber == 4) {
-            return;
-        } else if (operationNumber == 5) {
-            return;
-        } else {
-            System.out.println("Error: operation number must be a number between 1 and 5\n");
-            // display_menu(listType);
-            // return;
-        }
-
+        return linkedList;
     }
 
 
-    public static String get_list_type() {
+    public static void displayMenu(String listType, LinkedList heapA, LinkedList heapB) {
+        Scanner scanner = new Scanner(System.in);
+        int operationNumber;
+
+        do {
+            System.out.print("Enter desired operation:\n1. MAKE-HEAP A\n2. MAKE-HEAP B\n3. INSERT A\n4. INSERT B\n" +
+                             "5. MINIMUM A\n6. MINIMUM B\n7. EXTRACT MIN A\n8. EXTRACT MIN B\n9. UNION\n10. EXIT\n");
+            operationNumber = scanner.nextInt();
+
+            switch (operationNumber) {
+                case 1:
+                    heapA = makeHeap();
+                    break;
+                case 2:
+                    heapB = makeHeap();
+                    break;
+                case 3:
+                    // handle INSERT A
+                    break;
+                case 4:
+                    // handle INSERT B
+                    break;
+                case 5:
+                    // handle MINIMUM A
+                    break;
+                case 6:
+                    // handle MINIMUM B
+                    break;
+                case 7:
+                    // handle EXTRACT MIN A
+                    break;
+                case 8:
+                    // handle EXTRACT MIN B
+                    break;
+                case 9:
+                    // handle UNION
+                    break;
+                case 10:
+                    // Exit the loop when 10 is entered
+                    break;
+                default:
+                    System.out.println("Error: operation number must be a number between 1 and 10\n");
+                    break;
+            }
+        } while (operationNumber != 10);
+    }
+
+
+
+    public static String getListType() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter array type (sorted or not sorted): ");
         String listType = scanner.nextLine();
@@ -135,12 +172,10 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String listType = get_list_type();
-        display_menu(listType);
-        
-        // int[] numbers_array = get_input_from_file(fileName);
-        // LinkedList linkedList = createLinkedList(numbers_array);
-        // linkedList.display();
-
+        int[] emptyArray = new int[0];
+        LinkedList heapA = createLinkedList(emptyArray);
+        LinkedList heapB = createLinkedList(emptyArray);
+        String listType = getListType();
+        displayMenu(listType, heapA, heapB);
     }
 }
