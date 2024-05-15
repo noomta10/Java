@@ -99,28 +99,24 @@ public class Main {
     public static void display_menu(String listType) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter desired operation:\n1. MAKE-HEAP\n2. INSERT\n3. MINIMUM\n4. EXTRACT MIN\n5. UNION\n");
-        int operation_number = scanner.nextInt();
+        int operationNumber = scanner.nextInt();
 
-        if (operation_number == 1) {
-            
-        } else if (operation_number == 2) {
-            scanner.close();
+        if (operationNumber == 1) {
+            System.out.println("hola\n");
+        } else if (operationNumber == 2) {
             return;
-        } else if (operation_number == 2) {
-            scanner.close();
+        } else if (operationNumber == 3) {
             return;
-        } else if (operation_number == 2) {
-            scanner.close();
+        } else if (operationNumber == 4) {
             return;
-        } else if (operation_number == 2) {
-            scanner.close();
+        } else if (operationNumber == 5) {
             return;
         } else {
             System.out.println("Error: operation number must be a number between 1 and 5\n");
-            display_menu(listType);
+            // display_menu(listType);
+            // return;
         }
 
-        scanner.close();
     }
 
 
@@ -128,11 +124,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter array type (sorted or not sorted): ");
         String listType = scanner.nextLine();
-        if (listType != "sorted" || listType != "not sorted") {
+        
+        if (!listType.equals("sorted") && !listType.equals("not sorted")) {
+            System.out.println(listType);
             System.out.println("Error: list type shold be 'sorted' or 'not sorted'\n");
             System.exit(-1);
         }
-        scanner.close();
 
         return listType;
     }
