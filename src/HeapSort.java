@@ -131,21 +131,41 @@ public class Main {
     }
 
 
-    public static LinkedList insert(LinkedList heap) {
+    public static void insert(LinkedList heap) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number to insert: ");
         int number_to_insert = scanner.nextInt();
         heap.add(number_to_insert);
         heap.display();
-
-        return heap;
     }
 
 
-    // public static void extractMin(LinkedList heap) {
-    //     return;  
-    // }
+    public static void extractMin(LinkedList heap) {
+        Node current = heap.head; 
+        int min = current.data;
+        while (current != null) {
+            if (current.data < min) {
+                min = current.data;
+            }
+            current = current.next;
+        }
 
+        heap.delete(min);
+        heap.display();
+    }
+
+    public static void minimum(LinkedList heap) {
+        Node current = heap.head; 
+        int min = current.data;
+        while (current != null) {
+            if (current.data < min) {
+                min = current.data;
+            }
+            current = current.next;
+        }
+
+        System.out.println(min);
+    }
 
     public static void displayMenu(String listType, LinkedList heapA, LinkedList heapB) {
         Scanner scanner = new Scanner(System.in);
@@ -164,22 +184,22 @@ public class Main {
                     heapB = makeHeap(heapB);
                     break;
                 case 3:
-                    heapA = insert(heapA);
+                    insert(heapA);
                     break;
                 case 4:
-                    heapB = insert(heapB);
+                    insert(heapB);
                     break;
                 case 5:
-                    // handle MINIMUM A
+                    minimum(heapA);
                     break;
                 case 6:
-                    // handle MINIMUM B
+                    minimum(heapB);
                     break;
                 case 7:
-                    // handle EXTRACT MIN A
+                    extractMin(heapA);
                     break;
                 case 8:
-                    // handle EXTRACT MIN B
+                    extractMin(heapB);
                     break;
                 case 9:
                     // handle UNION
