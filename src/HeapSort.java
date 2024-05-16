@@ -38,6 +38,22 @@ class Heap {
         current.next = newNode;
     }
 
+    public void add_ordered(int data) {
+        Node newNode = new Node(data);
+        if (head == null || head.data >= data) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+        Node current = head;
+        while (current.next != null && current.next.data < data) {
+            current = current.next;
+        }
+        newNode.next = current.next;
+        current.next = newNode;
+    }
+    
+
     public void display() {
         Node current = head;
         while (current != null) {
@@ -154,11 +170,16 @@ public class Main {
     }
 
 
-    public static void insert(Heap heap) {
+    public static void insert(Heap heap, String listType) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number to insert: ");
         int number_to_insert = scanner.nextInt();
-        heap.add(number_to_insert);
+
+        if (listType.equals("sorted")){
+           heap.add_ordered(number_to_insert);
+        } else {
+            heap.add(number_to_insert);
+        }
 
         System.out.println("Heap after insertion:");
         heap.display();
@@ -187,7 +208,7 @@ public class Main {
     }
 
 
-    public static void minimum(Heap heap) {
+    public static void minimum(Heap heap, String listType) {
         Node current = heap.head; 
         if (current == null){
             System.out.println("Heap empty, no minumum found\n");
@@ -195,11 +216,13 @@ public class Main {
         }
 
         int min = current.data;
-        while (current != null) {
-            if (current.data < min) {
-                min = current.data;
+        if (listType.equals("not sorted")){
+            while (current != null) {
+                if (current.data < min) {
+                    min = current.data;
+                }
+                current = current.next;
             }
-            current = current.next;
         }
 
         System.out.printf("Heap minimum: %d\n", min);
@@ -244,16 +267,16 @@ public class Main {
                     heapB = makeHeap(heapB, listType);
                     break;
                 case 3:
-                    insert(heapA);
+                    insert(heapA, listType);
                     break;
                 case 4:
-                    insert(heapB);
+                    insert(heapB, listType);
                     break;
                 case 5:
-                    minimum(heapA);
+                    minimum(heapA, listType);
                     break;
                 case 6:
-                    minimum(heapB);
+                    minimum(heapB, listType);
                     break;
                 case 7:
                     extractMin(heapA);
