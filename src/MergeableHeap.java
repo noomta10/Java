@@ -53,7 +53,6 @@ class Heap {
         current.next = newNode;
     }
     
-
     public void display() {
         Node current = head;
         while (current != null) {
@@ -84,6 +83,15 @@ class Heap {
         }
 
         System.out.println("Data not found in the list");
+    }
+
+    public void delete_head() {
+        if (head == null) {
+            System.out.println("List is empty\n");
+            return;
+        }
+        
+        head = head.next;
     }
 }
 
@@ -186,22 +194,25 @@ public class Main {
     }
 
 
-    public static void extractMin(Heap heap) {
+    public static void extractMin(Heap heap, String listType) {
         Node current = heap.head; 
         if (current == null){
             System.out.println("Heap empty, no minumum found\n");
             return;
         }
 
-        int min = current.data;
-        while (current != null) {
-            if (current.data < min) {
-                min = current.data;
+        if (listType.equals("sorted")){
+            heap.delete_head();
+        } else {
+            int min = current.data;
+            while (current != null) {
+                if (current.data < min) {
+                    min = current.data;
+                }
+                current = current.next;
             }
-            current = current.next;
+            heap.delete(min);
         }
-
-        heap.delete(min);
 
         System.out.println("Heap after deletion:");
         heap.display();
@@ -229,7 +240,7 @@ public class Main {
     }
 
     
-    public static void union(Heap heapA, Heap heapB) {
+    public static void union(Heap heapA, Heap heapB, String listType) {
         Node current = heapB.head; 
         
         System.out.println("Before UNION:\nHeap A: ");
@@ -238,7 +249,11 @@ public class Main {
         heapB.display();
         
         while (current != null) {
-            heapA.add(current.data);
+            if (listType.equals("sorted")){
+                heapA.add_ordered(current.data);
+            } else {
+                heapA.add(current.data);
+            }
             heapB.delete(current.data);
             current = current.next;
         }
@@ -279,13 +294,13 @@ public class Main {
                     minimum(heapB, listType);
                     break;
                 case 7:
-                    extractMin(heapA);
+                    extractMin(heapA, listType);
                     break;
                 case 8:
-                    extractMin(heapB);
+                    extractMin(heapB, listType);
                     break;
                 case 9:
-                    union(heapA, heapB);
+                    union(heapA, heapB, listType);
                     break;
                 case 10:
                     break;
