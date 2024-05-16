@@ -18,10 +18,10 @@ class Node {
 }
 
 
-class LinkedList {
+class Heap {
     Node head;
 
-    public LinkedList() {
+    public Heap() {
         this.head = null;
     }
 
@@ -109,23 +109,43 @@ public class Main {
     }
 
 
-    public static LinkedList createLinkedList(int[] array) {
-        LinkedList linkedList = new LinkedList();
+    public static Heap createHeap(int[] array) {
+        Heap heap = new Heap();
         
         for (int i = 0; i < array.length; i++) {
-            linkedList.add(array[i]);
+            heap.add(array[i]);
         }
 
-        return linkedList;
+        return heap;
     }
 
 
-    public static LinkedList makeHeap(LinkedList heap) {
+    public static void bubbleSort(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    // Swap array[j] and array[j+1]
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+    }
+
+
+    public static Heap makeHeap(Heap heap, String listType) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter file name for array input: ");
         String fileName = scanner.nextLine();
         int[] numbers_array = getInputFromFile(fileName);
-        heap = createLinkedList(numbers_array);
+
+        if (listType.equals("sorted")){
+            bubbleSort(numbers_array);
+        }
+
+        heap = createHeap(numbers_array);
         
         System.out.println("Heap created:");
         heap.display();
@@ -134,7 +154,7 @@ public class Main {
     }
 
 
-    public static void insert(LinkedList heap) {
+    public static void insert(Heap heap) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number to insert: ");
         int number_to_insert = scanner.nextInt();
@@ -145,7 +165,7 @@ public class Main {
     }
 
 
-    public static void extractMin(LinkedList heap) {
+    public static void extractMin(Heap heap) {
         Node current = heap.head; 
         if (current == null){
             System.out.println("Heap empty, no minumum found\n");
@@ -167,7 +187,7 @@ public class Main {
     }
 
 
-    public static void minimum(LinkedList heap) {
+    public static void minimum(Heap heap) {
         Node current = heap.head; 
         if (current == null){
             System.out.println("Heap empty, no minumum found\n");
@@ -186,7 +206,7 @@ public class Main {
     }
 
     
-    public static void union(LinkedList heapA, LinkedList heapB) {
+    public static void union(Heap heapA, Heap heapB) {
         Node current = heapB.head; 
         
         System.out.println("Before UNION:\nHeap A: ");
@@ -207,7 +227,7 @@ public class Main {
     }
 
 
-    public static void displayMenu(String listType, LinkedList heapA, LinkedList heapB) {
+    public static void displayMenu(String listType, Heap heapA, Heap heapB) {
         Scanner scanner = new Scanner(System.in);
         int operationNumber;
 
@@ -218,10 +238,10 @@ public class Main {
 
             switch (operationNumber) {
                 case 1:
-                    heapA = makeHeap(heapA);
+                    heapA = makeHeap(heapA, listType);
                     break;
                 case 2:
-                    heapB = makeHeap(heapB);
+                    heapB = makeHeap(heapB, listType);
                     break;
                 case 3:
                     insert(heapA);
@@ -267,7 +287,7 @@ public class Main {
                 case "not sorted":
                     break;
                 default:
-                    System.out.println("Error: list type shold be 'sorted' or 'not sorted'\n");
+                    System.out.println("Error: list type should be 'sorted' or 'not sorted'\n");
                     break;
             };
         } while (!listType.equals("sorted") && !listType.equals("not sorted"));
@@ -277,8 +297,8 @@ public class Main {
 
     public static void main(String[] args) {
         int[] emptyArray = new int[0];
-        LinkedList heapA = createLinkedList(emptyArray);
-        LinkedList heapB = createLinkedList(emptyArray);
+        Heap heapA = createHeap(emptyArray);
+        Heap heapB = createHeap(emptyArray);
         String listType = getListType();
         displayMenu(listType, heapA, heapB);
     }
