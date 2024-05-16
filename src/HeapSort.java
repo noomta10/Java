@@ -100,6 +100,7 @@ public class Main {
 
         } catch (FileNotFoundException e) {
             System.out.println("Error: file not found\n");
+            System.exit(-1);
         } catch (IOException e) {
             System.out.println("Error: can not read file\n");
             e.printStackTrace();
@@ -142,6 +143,11 @@ public class Main {
 
     public static void extractMin(LinkedList heap) {
         Node current = heap.head; 
+        if (current == null){
+            System.out.println("Heap empty, no minumum found\n");
+            return;
+        }
+
         int min = current.data;
         while (current != null) {
             if (current.data < min) {
@@ -154,8 +160,14 @@ public class Main {
         heap.display();
     }
 
+
     public static void minimum(LinkedList heap) {
         Node current = heap.head; 
+        if (current == null){
+            System.out.println("Heap empty, no minumum found\n");
+            return;
+        }
+
         int min = current.data;
         while (current != null) {
             if (current.data < min) {
@@ -164,15 +176,37 @@ public class Main {
             current = current.next;
         }
 
-        System.out.println(min);
+        System.out.printf("Heap minimum: %d\n", min);
     }
+
+    
+    public static void union(LinkedList heapA, LinkedList heapB) {
+        Node current = heapB.head; 
+        
+        System.out.println("Heap A: ");
+        heapA.display();
+        System.out.println("Heap B: ");
+        heapB.display();
+        
+        while (current != null) {
+            heapA.add(current.data);
+            heapB.delete(current.data);
+            current = current.next;
+        }
+
+        System.out.println("Heap A: ");
+        heapA.display();
+        System.out.println("Heap B: ");
+        heapB.display();
+    }
+
 
     public static void displayMenu(String listType, LinkedList heapA, LinkedList heapB) {
         Scanner scanner = new Scanner(System.in);
         int operationNumber;
 
         do {
-            System.out.print("Enter desired operation:\n1. MAKE-HEAP A\n2. MAKE-HEAP B\n3. INSERT A\n4. INSERT B\n" +
+            System.out.print("\nEnter desired operation:\n1. MAKE-HEAP A\n2. MAKE-HEAP B\n3. INSERT A\n4. INSERT B\n" +
                              "5. MINIMUM A\n6. MINIMUM B\n7. EXTRACT MIN A\n8. EXTRACT MIN B\n9. UNION\n10. EXIT\n");
             operationNumber = scanner.nextInt();
 
@@ -202,10 +236,9 @@ public class Main {
                     extractMin(heapB);
                     break;
                 case 9:
-                    // handle UNION
+                    union(heapA, heapB);
                     break;
                 case 10:
-                    // Exit the loop when 10 is entered
                     break;
                 default:
                     System.out.println("Error: operation number must be a number between 1 and 10\n");
@@ -215,17 +248,23 @@ public class Main {
     }
 
 
-
     public static String getListType() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter array type (sorted or not sorted): ");
-        String listType = scanner.nextLine();
-        
-        if (!listType.equals("sorted") && !listType.equals("not sorted")) {
-            System.out.println(listType);
-            System.out.println("Error: list type shold be 'sorted' or 'not sorted'\n");
-            System.exit(-1);
-        }
+        String listType;
+
+        do {
+            System.out.print("Enter array type (sorted or not sorted): ");
+            listType = scanner.nextLine();
+            switch (listType) {
+                case "sorted":
+                    break;
+                case "not sorted":
+                    break;
+                default:
+                    System.out.println("Error: list type shold be 'sorted' or 'not sorted'\n");
+                    break;
+            };
+        } while (!listType.equals("sorted") && !listType.equals("not sorted"));
 
         return listType;
     }
