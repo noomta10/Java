@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
+import java.util.*;
 
 
 class Node {
@@ -92,6 +93,24 @@ class Heap {
         }
         
         head = head.next;
+    }
+
+    public void heapSort() {
+        if (head == null || head.next == null)
+            return;
+
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+        Node current = head;
+        while (current != null) {
+            minHeap.offer(current.data);
+            current = current.next;
+        }
+
+        current = head;
+        while (!minHeap.isEmpty()) {
+            current.data = minHeap.poll();
+            current = current.next;
+        }
     }
 }
 
@@ -271,7 +290,7 @@ public class Main {
 
         do {
             System.out.print("\nEnter desired operation:\n1. MAKE-HEAP A\n2. MAKE-HEAP B\n3. INSERT A\n4. INSERT B\n" +
-                             "5. MINIMUM A\n6. MINIMUM B\n7. EXTRACT MIN A\n8. EXTRACT MIN B\n9. UNION\n10. EXIT\n");
+                             "5. MINIMUM A\n6. MINIMUM B\n7. EXTRACT MIN A\n8. EXTRACT MIN B\n9. UNION\n10 SORT A\n11. SORT B\n11. EXIT\n");
             operationNumber = scanner.nextInt();
 
             switch (operationNumber) {
@@ -303,12 +322,19 @@ public class Main {
                     union(heapA, heapB, listType);
                     break;
                 case 10:
+                    heapA.heapSort();
+                    heapA.display();
+                    break;
+                case 11:
+                    heapB.heapSort();
+                    heapB.display();
+                case 12:
                     break;
                 default:
                     System.out.println("Error: operation number must be a number between 1 and 10\n");
                     break;
             }
-        } while (operationNumber != 10);
+        } while (operationNumber != 12);
     }
 
 
