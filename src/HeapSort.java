@@ -126,6 +126,8 @@ public class Main {
         String fileName = scanner.nextLine();
         int[] numbers_array = getInputFromFile(fileName);
         heap = createLinkedList(numbers_array);
+        
+        System.out.println("Heap created:");
         heap.display();
 
         return heap;
@@ -137,6 +139,8 @@ public class Main {
         System.out.println("Enter a number to insert: ");
         int number_to_insert = scanner.nextInt();
         heap.add(number_to_insert);
+
+        System.out.println("Heap after insertion:");
         heap.display();
     }
 
@@ -157,6 +161,8 @@ public class Main {
         }
 
         heap.delete(min);
+
+        System.out.println("Heap after deletion:");
         heap.display();
     }
 
@@ -183,7 +189,7 @@ public class Main {
     public static void union(LinkedList heapA, LinkedList heapB) {
         Node current = heapB.head; 
         
-        System.out.println("Heap A: ");
+        System.out.println("Before UNION:\nHeap A: ");
         heapA.display();
         System.out.println("Heap B: ");
         heapB.display();
@@ -194,7 +200,7 @@ public class Main {
             current = current.next;
         }
 
-        System.out.println("Heap A: ");
+        System.out.println("After UNION:\nHeap A: ");
         heapA.display();
         System.out.println("Heap B: ");
         heapB.display();
