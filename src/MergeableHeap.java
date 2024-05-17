@@ -39,7 +39,7 @@ class Heap {
         current.next = newNode;
     }
 
-    public void add_ordered(int data) {
+    public void addOrdered(int data) {
         Node newNode = new Node(data);
         if (head == null || head.data >= data) {
             newNode.next = head;
@@ -86,7 +86,7 @@ class Heap {
         System.out.println("Data not found in the list");
     }
 
-    public void delete_head() {
+    public void deleteHead() {
         if (head == null) {
             System.out.println("List is empty\n");
             return;
@@ -182,13 +182,13 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter file name for array input: ");
         String fileName = scanner.nextLine();
-        int[] numbers_array = getInputFromFile(fileName);
+        int[] numbersArray = getInputFromFile(fileName);
 
         if (listType.equals("sorted")){
-            bubbleSort(numbers_array);
+            bubbleSort(numbersArray);
         }
 
-        heap = createHeap(numbers_array);
+        heap = createHeap(numbersArray);
         
         System.out.println("Heap created:");
         heap.display();
@@ -200,12 +200,12 @@ public class Main {
     public static void insert(Heap heap, String listType) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number to insert: ");
-        int number_to_insert = scanner.nextInt();
+        int numberToInsert = scanner.nextInt();
 
         if (listType.equals("sorted")){
-           heap.add_ordered(number_to_insert);
+           heap.addOrdered(numberToInsert);
         } else {
-            heap.add(number_to_insert);
+            heap.add(numberToInsert);
         }
 
         System.out.println("Heap after insertion:");
@@ -221,7 +221,7 @@ public class Main {
         }
 
         if (listType.equals("sorted")){
-            heap.delete_head();
+            heap.deleteHead();
         } else {
             int min = current.data;
             while (current != null) {
@@ -269,7 +269,7 @@ public class Main {
         
         while (current != null) {
             if (listType.equals("sorted")){
-                heapA.add_ordered(current.data);
+                heapA.addOrdered(current.data);
             } else {
                 heapA.add(current.data);
             }
@@ -290,7 +290,7 @@ public class Main {
 
         do {
             System.out.print("\nEnter desired operation:\n1. MAKE-HEAP A\n2. MAKE-HEAP B\n3. INSERT A\n4. INSERT B\n" +
-                             "5. MINIMUM A\n6. MINIMUM B\n7. EXTRACT MIN A\n8. EXTRACT MIN B\n9. UNION\n10 SORT A\n11. SORT B\n11. EXIT\n");
+                             "5. MINIMUM A\n6. MINIMUM B\n7. EXTRACT MIN A\n8. EXTRACT MIN B\n9. UNION\n10. SORT A\n11. SORT B\n12. EXIT\n");
             operationNumber = scanner.nextInt();
 
             switch (operationNumber) {
